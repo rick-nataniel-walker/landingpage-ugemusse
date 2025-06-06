@@ -1,0 +1,40 @@
+:root {
+  --p-color: #00351A;
+  --s-color: #F8F9FB;
+  --base: #00A14E;
+  --secondary: #00A14E;
+  --accent: #FFA500;
+  --main-bg: #f3f2f2;
+  --light: #F8F9FB;
+  --dark: #1A2E1F;
+  --gray: #6c757d;
+}
+
+.overly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.gray-section {
+  background: var(--bs-gray-300);
+}
+
+* {
+  font-family: 'Sansita';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.default-p {
+  color: var(--s-color);
+}
+
+.opact-box {
+  opacity: 0.9;
+}
+
