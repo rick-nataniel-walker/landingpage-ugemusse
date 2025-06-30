@@ -299,4 +299,24 @@ body {
     .nav-btn {
         justify-content: center;
     }
+
+    @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+    }
+
+    .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 2000px 100%;
+        animation: shimmer 1.5s infinite linear;
+        border-radius: 4px;
+        color: transparent !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hide actual content during loading */
+    .skeleton-container:not(.loaded) > :not(.skeleton) {
+        display: none;
+    }
 }
