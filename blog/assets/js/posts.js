@@ -15,7 +15,7 @@ const blogCard = (data) => {
             <h3 class="blog-title">${data.title}</h3>
             <p class="blog-excerpt">${data.excerpt}</p>
             <div class="blog-meta">
-                <span class="blog-date"><i class="far fa-calendar"></i> ${data.publishedAt}</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> ${formatDate(data.publishedAt)}</span>
                 <span>12 Comentários</span>
             </div>
         </div>
