@@ -23,7 +23,9 @@ const readingPostBody = (data) => {
             </div>
         </div>
         
-        <div class="featured-image"></div>
+        <div class="featured-image">
+            <img src="${data.postImg}" class="w-100 h-100 object-fit-cover rounded">
+        </div>
         
         <div class="article-body">
             ${data.content}
