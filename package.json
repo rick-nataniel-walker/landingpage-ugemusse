@@ -1,0 +1,24 @@
+{
+  "name": "gemusse-website",
+  "version": "1.0.0",
+  "description": "gemusse-website version 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rick-nataniel-walker/landingpage-ugemusse.git"
+  },
+  "keywords": [
+    "landingpage",
+    "blogger",
+    "crm"
+  ],
+  "author": "walker project",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rick-nataniel-walker/landingpage-ugemusse/issues"
+  },
+  "homepage": "https://github.com/rick-nataniel-walker/landingpage-ugemusse#readme"
+}

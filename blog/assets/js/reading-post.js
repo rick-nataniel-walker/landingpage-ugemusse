@@ -18,7 +18,7 @@ const readingPostBody = (data) => {
             <div class="article-meta">
                 <span><i class="far fa-user"></i> ${data.author.name}</span>
                 <span><i class="far fa-calendar"></i> ${formatDate(data.publishedAt)}</span>
-                <span><i class="far fa-clock"></i> 8 min leitura</span>
+                <span><i class="far fa-clock"></i> ${wordCount(data.content)} min leitura</span>
                 <span><i class="far fa-comment"></i> 24 Comentários</span>
             </div>
         </div>

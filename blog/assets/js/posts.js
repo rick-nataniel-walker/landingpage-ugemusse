@@ -36,7 +36,7 @@ const latestPost = (data) => {
             <div class="featured-meta">
                 <span><i class="far fa-user"></i> ${data.author.name}</span>
                 <span><i class="far fa-calendar"></i> ${formatDate(data.publishedAt)}</span>
-                <span><i class="far fa-clock"></i> 8 min leitura</span>
+                <span><i class="far fa-clock"></i> ${wordCount(data.content)} min leitura</span>
             </div>
             <p class="featured-excerpt">${data.excerpt}</p>
             <a href="reading-page.html?id=${data.id}" class="read-more">
