@@ -12,7 +12,7 @@ const blogCard = (data) => {
   return `
     <a href="reading-page.html?id=${data.id}" style="outline: none; text-decoration: none">
         <div class="blog-card" >
-            <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="blog-image" style="background-image: url('${data.postImg}');"></div>
             <div class="blog-content">
                 <span class="blog-category">${data.category.name.toUpperCase()}</span>
                 <h3 class="blog-title">${data.title}</h3>
