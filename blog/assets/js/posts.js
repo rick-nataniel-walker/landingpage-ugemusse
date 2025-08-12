@@ -1,5 +1,5 @@
 
-const pageDatils = {}
+var pageDatils = {}
 $(()=>{
     axios.get('http://127.0.0.1:8000/api/posts').
         then((r) => {
@@ -7,9 +7,12 @@ $(()=>{
             const leadingPost = posts.splice(0, 1);
             tableFiller("latestPost", leadingPost, latestPost);
             pageDatils.list = posts;
-            initPageObject(pageDatils);
+            pageDatils = initPageObject(pageDatils);
             tableFiller("blogCard",  displayedItems(), blogCard);
-    })
+            pagination(pageDatils.maxPages);
+    });
+
+
 });
 
 const blogCard = (data) => {

@@ -22,6 +22,7 @@ var pageDetails = {
 function initPageObject(pageDetail){
     pageDetails = {...pageDetails, ...pageDetail};
     pageDetails.maxPages = pageDetails.list.length / pageDetails.itemsPerPage;
+    return pageDetails;
 }
 
 function currentPage() {
