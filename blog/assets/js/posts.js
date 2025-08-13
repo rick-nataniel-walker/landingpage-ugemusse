@@ -1,5 +1,10 @@
 
 var pageDatils = {}
+
+function renderPosts() {
+    tableFiller("blogCard", displayedItems(), blogCard);
+}
+
 $(()=>{
     axios.get('http://127.0.0.1:8000/api/posts').
         then((r) => {
@@ -8,8 +13,7 @@ $(()=>{
             tableFiller("latestPost", leadingPost, latestPost);
             pageDatils.list = posts;
             pageDatils = initPageObject(pageDatils);
-            tableFiller("blogCard",  displayedItems(), blogCard);
-            pagination(pageDatils.maxPages, pageDatils.currentPageIndex, pageDatils.maxPages);
+            pagination();
     });
 
 
