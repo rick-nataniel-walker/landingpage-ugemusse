@@ -181,15 +181,15 @@ const timeDiff = (target) =>{
  * @param callback
  * @returns {string|{list: any[], hashMap: {}}}
  */
-function tableFiller(htmlAreaId,payload,callback){
+function tableFiller(htmlAreaId,payload,callback, ...arguments){
     let htmlList = new Array();
     let list = new Array();
     let hashMap = {};
     let rows='';
     let table = document.querySelector("#"+htmlAreaId);
     table.innerHTML="";
-    payload.forEach((eachData,index) => {
-        htmlList.push(callback(eachData, index,...arguments));
+    payload.forEach((eachData) => {
+        htmlList.push(callback(eachData, ...arguments));
         list.push(eachData);
         hashMap[eachData.id] = eachData;
     });

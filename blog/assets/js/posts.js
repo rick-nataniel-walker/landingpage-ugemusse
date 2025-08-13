@@ -9,7 +9,7 @@ $(()=>{
             pageDatils.list = posts;
             pageDatils = initPageObject(pageDatils);
             tableFiller("blogCard",  displayedItems(), blogCard);
-            pagination(pageDatils.maxPages);
+            pagination(pageDatils.maxPages, pageDatils.currentPageIndex, pageDatils.maxPages);
     });
 
 

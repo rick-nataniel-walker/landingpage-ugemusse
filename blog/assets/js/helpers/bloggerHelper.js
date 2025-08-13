@@ -4,18 +4,19 @@ const wordCount = (words) => {
 }
 
 
-function pagination(itemPerpage) {
-    let pages = [];
+function pagination(itemPerpage,currentPageIndex) {
+     const pages = [];
     for(let i=0; i < itemPerpage; i++) {
         pages.push(i+1);
     }
-
-    console.log(pages);
-    tableFiller("pagArea", pages, btnRender);
+    tableFiller("pagArea", pages, btnRender(pages,currentPageIndex, itemPerpage));
 }
 
-function btnRender(index) {
-    return `
-          <button class="page-link active" onclick="">${index}</button>
-    `;
+function btnRender(index,currentPageIndex, maxPages) {
+    return function (index) {
+        let activePage = index===currentPageIndex ? "active" : "";
+        return `
+          <button class="page-link ${activePage}" onclick="pagination(${maxPages},${index})">${index}</button>
+        `
+    };
 }
