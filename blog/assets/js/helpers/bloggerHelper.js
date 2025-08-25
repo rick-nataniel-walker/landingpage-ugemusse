@@ -6,20 +6,39 @@ const wordCount = (words) => {
 }
 
 
-function pagination(currentPageIndex = pageDetails.currentPageIndex, callback=null) {
-     const pages = [];
-     pageDetails.currentPageIndex = currentPageIndex;
-     globalPageDetails = pageDetails;
-    for(let i=0; i < pageDetails.maxPages; i++) {
+function pagination(currentPageIndex = pageSpecs.currentPageIndex, callback=null) {
+    const pages = [];
+    pageSpecs.currentPageIndex = currentPageIndex;
+    globalPageDetails = pageSpecs;
+    for(let i=pageSpecs.sliceIndex; i < pageSpecs.currentPagSlice; i++) {
         pages.push(i+1);
     }
+
     tableFiller("pagArea", pages, btnRender(pages));
-    renderPosts(pageDatils.list);
+    renderPosts();
+}
+
+function next() {
+    if(pageSpecs.currentPagSlice < pageSpecs.maxPages) {
+        pageSpecs.sliceIndex++;
+        pageSpecs.currentPagSlice++;
+    }
+    nextPayload();
+    pagination();
+}
+
+function previous() {
+    if(pageSpecs.currentPagSlice >= pageSpecs.minPaginationSlice && pageSpecs.sliceIndex>0) {
+        pageSpecs.sliceIndex--;
+        pageSpecs.currentPagSlice--;
+    }
+    previousPayload();
+    pagination();
 }
 
 function btnRender(pages) {
     return function (pages) {
-        let activePage = pages===pageDetails.currentPageIndex ? "active" : "";
+        let activePage = pages===pageSpecs.currentPageIndex ? "active" : "";
         return `
           <button class="page-link ${activePage}" 
             onclick="pagination(${pages})">

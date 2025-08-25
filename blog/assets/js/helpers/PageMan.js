@@ -1,6 +1,6 @@
 var pageDetails = {
     currentPageIndex: 1,
-    itemsPerPage: 6,
+    itemsPerPage: 4,
     currentSlice: [],
     list: [],
     maxPages: 0,
@@ -30,23 +30,17 @@ function currentPage() {
     $(pageDetails.navigation.wholePageHolder).text(pageDetails.maxPages);
 }
 
-function previous() {
+function previousPayload() {
     const previousPage = pageDetails.currentPageIndex - 1;
     const firstPage = 1;
     let findPrev = previousPage >= firstPage ? previousPage : undefined;
-    if (findPrev !== undefined) {
-        pageDetails.currentPageIndex--;
-        return displayedItems(pageDetails.currentSlice);
-    }
+    if (findPrev !== undefined) pageDetails.currentPageIndex--;
 }
 
-function next() {
+function nextPayload() {
     const nextPage = pageDetails.currentPageIndex + 1;
     let findNext = nextPage <= pageDetails.maxPages ? nextPage : undefined;
-    if (findNext !== undefined) {
-        pageDetails.currentPageIndex++;
-        return displayedItems(pageDetails.currentSlice);
-    }
+    if (findNext !== undefined) pageDetails.currentPageIndex++;
 }
 
 function displayedItems(payload = pageDetails.list) {

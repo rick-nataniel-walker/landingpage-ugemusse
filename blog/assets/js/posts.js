@@ -1,5 +1,9 @@
 
-var pageDatils = {}
+var pageSpecs = {
+    sliceIndex: 0,
+    minPaginationSlice: 3,
+    currentPagSlice: 3,
+}
 
 function renderPosts() {
     tableFiller("blogCard", displayedItems(), blogCard);
@@ -11,8 +15,8 @@ $(()=>{
             const posts = r.data.data;
             const leadingPost = posts.splice(0, 1);
             tableFiller("latestPost", leadingPost, latestPost);
-            pageDatils.list = posts;
-            pageDatils = initPageObject(pageDatils);
+            pageSpecs.list = posts;
+            pageSpecs = initPageObject(pageSpecs);
             pagination();
     });
 
